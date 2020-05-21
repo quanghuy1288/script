@@ -20,3 +20,7 @@ mkdir -p /etc/supervisord/conf.d
 echo "[include]" >> /etc/supervisord/supervisord.conf
 echo "files = conf.d/*.ini" >> /etc/supervisord/supervisord.conf
 
+wget https://raw.githubusercontent.com/quanghuy1288/script/master/extra/supervisord.service -O /usr/lib/systemd/system/supervisord.service
+systemctl start supervisord
+systemctl status supervisord
+systemctl enable supervisord
